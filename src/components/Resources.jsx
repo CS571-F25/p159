@@ -1,28 +1,41 @@
-import { Card, ListGroup } from 'react-bootstrap'
 import SectionHeader from './SectionHeader'
+import ResourceCard from './ResourceCard'
 
 const resources = [
-  { title: 'Starter Reading', items: ['a16z State of Crypto', 'FedNow overview', 'Plaid docs'] },
-  { title: 'Builder Kits', items: ['Open banking sandbox', 'DeFi data API', 'React + Flask starter'] },
-  { title: 'Career Prep', items: ['Mock case prompts', 'Resume swaps', 'Alumni contacts'] },
+  {
+    title: 'Starter Reading',
+    description: 'Get the language down.',
+    tag: 'Basics',
+    items: ['a16z State of Crypto', 'FedNow overview', 'How interchange works', 'Modern fraud patterns'],
+  },
+  {
+    title: 'Builder Kits',
+    description: 'Launch a tiny prototype fast.',
+    tag: 'Projects',
+    items: ['Open banking sandbox', 'On-chain analytics starter', 'React + Flask template', 'UW data viz kit'],
+  },
+  {
+    title: 'Career Prep',
+    description: 'Practice real prompts.',
+    tag: 'Careers',
+    items: ['Mock case prompts', 'Resume swaps', 'Alumni contacts', 'Interview rubric'],
+  },
+  {
+    title: 'Inclusive Practices',
+    description: 'Design with accessibility in mind.',
+    tag: 'UX',
+    items: ['WCAG quickstart', 'Color contrast checker', 'Form label checklist', 'Keyboard-friendly tips'],
+  },
 ]
 
 export default function Resources() {
   return (
     <div className="page-wrapper">
-      <SectionHeader title="Resources" subtitle="Handy links to kick off your fintech journey." />
+      <SectionHeader title="Resources" subtitle="Handy links to kick off your fintech journey." headingLevel={1} />
+      <h2 className="h5 fw-semibold">Collections curated by members</h2>
       <div className="resource-grid">
         {resources.map((resource) => (
-          <Card key={resource.title} className="shadow-sm">
-            <Card.Body>
-              <Card.Title>{resource.title}</Card.Title>
-              <ListGroup variant="flush">
-                {resource.items.map((item) => (
-                  <ListGroup.Item key={item}>{item}</ListGroup.Item>
-                ))}
-              </ListGroup>
-            </Card.Body>
-          </Card>
+          <ResourceCard key={resource.title} {...resource} />
         ))}
       </div>
     </div>

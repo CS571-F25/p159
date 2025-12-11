@@ -10,14 +10,23 @@ const teamMembers = [
 export default function Team() {
   return (
     <div className="page-wrapper">
-      <SectionHeader title="Meet the Team" subtitle="Students building a fintech playground on campus." />
+      <SectionHeader
+        title="Meet the Team"
+        subtitle="Students building a fintech playground on campus."
+        headingLevel={1}
+      />
+      <h2 className="h5 fw-semibold">Leadership</h2>
       <Row className="g-3">
         {teamMembers.map((member) => (
           <Col md={4} key={member.name}>
             <Card className="shadow-sm h-100 text-center">
               <Card.Body>
-                <div className="avatar-placeholder mb-3">{member.name[0]}</div>
-                <Card.Title>{member.name}</Card.Title>
+                <div className="avatar-placeholder mb-3" role="img" aria-label={`Portrait placeholder for ${member.name}`}>
+                  {member.name[0]}
+                </div>
+                <Card.Title as="h3" className="h5">
+                  {member.name}
+                </Card.Title>
                 <Card.Subtitle className="mb-2 text-primary">{member.role}</Card.Subtitle>
                 <Card.Text className="text-secondary">{member.focus}</Card.Text>
               </Card.Body>

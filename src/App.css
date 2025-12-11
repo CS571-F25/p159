@@ -1,5 +1,7 @@
 .app-shell {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(135deg, #fdf2f2 0%, #f8fafc 100%);
 }
 
@@ -9,6 +11,8 @@
 
 .main-content {
   max-width: 1100px;
+  width: 100%;
+  flex: 1;
 }
 
 .page-wrapper {
@@ -39,6 +43,22 @@
   gap: 1rem;
 }
 
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  color: #c5050c;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #0f172a;
+}
+
 .avatar-placeholder {
   width: 56px;
   height: 56px;
@@ -49,4 +69,28 @@
   justify-content: center;
   font-weight: 700;
   color: #c5050c;
+}
+
+.event-card,
+.resource-card {
+  border: 1px solid #e2e8f0;
+}
+
+.site-footer {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.site-footer .nav-link {
+  color: #e2e8f0;
+}
+
+.site-footer .nav-link.active,
+.site-footer .nav-link:focus,
+.site-footer .nav-link:hover {
+  color: #ffffff;
+}
+
+.faq-block .accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(197, 5, 12, 0.25);
 }

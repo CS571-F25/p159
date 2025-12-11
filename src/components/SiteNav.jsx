@@ -7,13 +7,16 @@ const links = [
   { path: '/events', label: 'Events' },
   { path: '/resources', label: 'Resources' },
   { path: '/team', label: 'Team' },
+  { path: '/join', label: 'Get involved' },
 ]
 
 export default function SiteNav() {
   return (
     <Navbar expand="lg" bg="danger" data-bs-theme="dark" className="shadow-sm">
       <Container>
-        <Navbar.Brand className="fw-bold">UW FinTech Club</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/" className="fw-bold">
+          UW FinTech Club
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="primary-nav" />
         <Navbar.Collapse id="primary-nav">
           <Nav className="ms-auto" navbarScroll>

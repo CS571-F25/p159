@@ -7,6 +7,8 @@ import About from './components/About'
 import Events from './components/Events'
 import Resources from './components/Resources'
 import Team from './components/Team'
+import GetInvolved from './components/GetInvolved'
+import SiteFooter from './components/SiteFooter'
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/join" element={<GetInvolved />} />
           </Routes>
         </Container>
+        <SiteFooter />
       </div>
     </HashRouter>
   )
