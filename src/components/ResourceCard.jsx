@@ -14,11 +14,22 @@ export default function ResourceCard({ title, description, items, tag }) {
           {title}
         </Card.Title>
         <ListGroup variant="flush">
-          {items.map((item) => (
-            <ListGroup.Item key={item} className="small">
-              {item}
-            </ListGroup.Item>
-          ))}
+          {items.map((item) => {
+            const label = typeof item === 'string' ? item : item.label
+            const href = typeof item === 'string' ? undefined : item.href
+
+            return (
+              <ListGroup.Item key={label} className="small">
+                {href ? (
+                  <a href={href} className="text-reset text-decoration-none" target="_blank" rel="noreferrer">
+                    {label}
+                  </a>
+                ) : (
+                  label
+                )}
+              </ListGroup.Item>
+            )
+          })}
         </ListGroup>
       </Card.Body>
     </Card>
